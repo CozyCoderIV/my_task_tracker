@@ -1,38 +1,125 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
+  margin-left: 30ch;
+  border: 3px solid white;
+  border-radius: 2vh;
+  width: 100vh;
+  height: 100vh;
+
+  background: linear-gradient(to top, rgb(67, 141, 159), rgb(132, 3, 149));
+  box-shadow: rgb(214, 86, 253) 0px 0px 15px 3px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.astro{
+  width: 17.5vh;
+  height: 19vh;
+}
+.button_a{
+  background-color: rgba(240, 248, 255, 0.531);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 1vh;
+  height: 100%;
+  width: 25%;
+
+  position: relative;
+  left: 10%;
+  margin: 1ch;
+}
+.button_on{
+  background-color: rgba(240, 248, 255, 0.531);
+  border: 1px solid rgb(16, 9, 17);
+  box-shadow: rgb(68, 44, 68) 0px 0px 10px 5px;
+  border-radius: 1vh;
+  height: 100%;
+  width: 25%;
+
+  position: relative;
+  left: 10%;
+  margin: 1ch;
+}
+.list_item{
+  width: 40ch;
+  height: 5ch;
+  border: 2px solid white;
+  border-radius: 2vh;
+  box-shadow: black 0px 0px 10px 3px;
+  display: grid;
+
+  margin-top: 2ch;
+}
+.list_item > *{
+  position: relative;
+  bottom: 10px;
+  color: aliceblue;
+  font-family: 'Zen Dots', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3{
+  position: relative;
+  bottom: 5px;
+  color: aliceblue;
+  font-family: 'Zen Dots', cursive;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#A{
+  position: relative;
+  top: 15ch;
+  right: 48.5ch;
+  width: 18vh;
+  height: 30vh;
+}
+#B{
+  position: relative;
+  top: 15ch;
+  width: 18vh;
+  height: 30vh;
+}
+#button_container{
+  height: 4ch;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-items: center;
+
+  margin-top: 10px;
+}
+#input{
+  width: 82ch;
+  background-color: rgba(240, 248, 255, 0.531);
+  border: 1px solid white;
+  border-radius: 1vh;
+
+  position: relative;
+  bottom: 5px;
+}
+#list{
+  list-style: none;
+  position: relative;
+  left: 18vh;
+  width: 48.5ch;
+  height: 60ch;
+  border: 1px solid black;
+  border-radius: 2vh;
+  box-shadow: inset black 0px 0px 10px 1px;
+  overflow-y: scroll;
+
+  background: linear-gradient(to top, rgb(18, 3, 27), rgb(66, 66, 66));
+}
+#list_container{
+  display: flex;
+  /* border: 1px solid green; */
+  border-radius: 2vh;
 }
 
-.App-link {
-  color: #61dafb;
+#title{
+  color: aliceblue;
+  font-family: 'Zen Dots', cursive;
+  text-shadow: black 1px 0 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#crewmemA{
+  position: relative;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
 }
