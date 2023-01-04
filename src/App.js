@@ -1,21 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import astronaut from '../src/media/purple_worker.png';
+import ListItem from './components/ListItem';
+import { BsXCircle } from "react-icons/bs";
 import './App.css';
 
 function App() {
   const [items, setItems] = useState([]);
   const [text, setText] = useState('');
   const [counter, setCounter] = useState(0);
-  const [highlight, setHighight] = useState(false);
   const listItem = {
     id: counter,
     name : text,
     clicked: false
   }
-  let removeButton = document.getElementById('rmv');
 
   // Debug Console Print
-  console.log(items, text, counter, highlight);
+  console.log(items, text, counter);
 
   // Methods
   const handleChange = (e) => {
@@ -27,28 +27,18 @@ function App() {
     setItems([...items, listItem]);
     setText('');
   }
-  const removeTask = () => {
+  const removeTask = (target) => {
     console.log(items, text, counter);
-    let rItem = items.find((item) => item.clicked === true);
     setCounter(prev => prev - 1);
     setItems((prev) => {
-      return prev.filter((item) => item !== rItem);
+      return prev.filter((item) => item.id !== target);
     });
-    setHighight(false);
   }
   const clearList = () => {
     console.log(items, text, counter);
     setCounter(0);
     setItems([]);
   }
-  useEffect(()=>{
-    if(highlight){
-      removeButton.className = "button_on";
-    }
-    else if(counter < 1){
-      removeButton.className = "button_a";
-    }
-  });
 
 
   return (
@@ -57,17 +47,19 @@ function App() {
       <input id="input" value={text} onChange={handleChange}/>
       <div id='button_container'>
         <button className="button_a" onClick={addTask}><h3>Add Task</h3></button>
-        <button className="button_a" id='rmv' onClick={removeTask}><h3>Remove Task</h3></button>
         <button className="button_a" onClick={clearList}><h3>Clear List</h3></button>
       </div>
 
       {/* To Do List */}
       <div id='list_container'>
         <ul id="list">
-          {items.map((item) => <li className='list_item' name={item.name} onClick={() => {item.clicked = true; setHighight(true);}}>
-                               <h2>{item.name}</h2></li>)}
+          {items.map((item) => <ListItem name={item.name} rmvtask={removeTask} id={item.id}/>)}
+          {/* {items.map((item) => <li className='list_item'>
+                  <div className= "item_text_container">
+                    <h3 className='item_text'>{item.name}</h3>
+                  </div>
+                  <button id='check' onClick={() => removeTask(item.id)}><BsXCircle/></button></li>)} */}
         </ul>
-
         <div id='A'>
           <img className='astro' src={astronaut}></img>
         </div>

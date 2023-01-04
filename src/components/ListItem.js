@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { BsXCircle } from "react-icons/bs";
 import '../../src/App.css'
 
 function ListItem(props) {
-  const [clicked, setClicked] = useState();
-  const handleChange = () => {
-    console.log("Clicked Item " + clicked);
-    setClicked(true);
-  }
   return (
-    <li className='list_item'>
-        <h2>{props.name}</h2>
-    </li>
+    <div>
+      <li className='list_item'>
+          <div className= "item_text_container">
+            <h3 className='item_text'>{props.name}</h3>
+          </div>
+          <button id='check' onClick={() => props.rmvtask(props.id)}><BsXCircle/></button>
+      </li>
+    </div>
   )
 }
 

@@ -46,7 +46,6 @@
   border: 2px solid white;
   border-radius: 2vh;
   box-shadow: black 0px 0px 10px 3px;
-  display: grid;
 
   margin-top: 2ch;
 }
@@ -83,6 +82,33 @@ h3{
   justify-items: center;
 
   margin-top: 10px;
+  margin-left: 13ch;
+}
+#check{
+  position: relative;
+  left: 40%;
+  bottom: 2.6ch;
+  width: 2ch;
+  height: 2ch;
+  background: rgba(251, 249, 249, 0.269);
+  border: 1px solid whitesmoke;
+  border-radius: 1.5vh;
+}
+#check > *{
+  position: relative;
+  top: 2px;
+}
+.item_text_container{
+  position: inherit;
+  width: 70%;
+  height: 2.8ch;
+  border-radius: 1.5vh;
+
+  display: flex;
+}
+.item_text{
+  position: relative;
+  left: 1ch;
 }
 #input{
   width: 82ch;
